@@ -5,7 +5,7 @@ This is a free-to-use HTML/javascript based overlay for roleplay streamers.  Bas
 
 Ofc Hightower: https://i.imgur.com/Bzzyxpw.png
 
-Deptuy Barnes: https://i.imgur.com/WyYo6jt.png
+Deputy Barnes: https://i.imgur.com/WyYo6jt.png
 
 # How to use:
 
