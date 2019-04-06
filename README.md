@@ -3,7 +3,9 @@ This is a free-to-use HTML/javascript based overlay for roleplay streamers.  Bas
 
 # Screenshot(s)
 
-https://image.prntscr.com/image/ySBwSPe3Q5a3YxnS1t8k_g.png
+Ofc Hightower: https://i.imgur.com/Bzzyxpw.png
+
+Deptuy Barnes: https://i.imgur.com/WyYo6jt.png
 
 # How to use:
 
