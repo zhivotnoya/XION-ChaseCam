@@ -23,7 +23,18 @@ This is a free-to-use HTML/javascript based overlay for roleplay streamers.  Bas
 
 5) activate the layer and profit!
 
+# Change Image
 
+1) make sure your image is saved as a png to preserve transparency (if any) other wise shouldn't matter.
+
+2) Navigate to: https://www.base64-image.de/  and drag/drop your image to have it converted to base64
+
+3) Copy the base64 code by clicking </> show code, and copy the code for img to your clipboard.
+
+4) using a text editor, replace the long string of code in the body of the html file with your string of code.  Be sure to
+   not remove the quotes.
+   
+5) Save the file and enjoy!
 
 # Version History:
 
