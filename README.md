@@ -39,6 +39,7 @@ This is a free-to-use HTML/javascript based overlay for roleplay streamers.  Bas
 5) Save the file and enjoy!
 
 # Version History:
+v3: double beep added by user @spaz926 .  Thanks for the addition!
 
 v2: this one
 
