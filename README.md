@@ -43,7 +43,7 @@ This is a free-to-use HTML/javascript based overlay for roleplay streamers.  Bas
 These fine folks use it all the time and I thank you from the bottom of my heart!
 (As I find them, I'll add them here)
 
-![https://info.sonorancad.com/integration-plugins/twitch-overlay-and-bot#bodycam-overlay]SonoranCAD offers a modified version that puts in your location information.
+SonoranCAD (https://info.sonorancad.com/integration-plugins/twitch-overlay-and-bot#bodycam-overlay ) offers a modified version that puts in your location information.
 (more to come, I promise)
 
 # Version History:
