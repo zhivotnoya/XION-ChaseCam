@@ -101,9 +101,7 @@
             s=d.getSeconds();
             t=d.toLocaleString('en', {timeZoneName:'short'}).split(' ').pop();
             clock();
-            day=d.getDate();
-            month=d.getMonth();
-            year=d.getFullYear();
+            updateDate();
             
         };
 
@@ -117,6 +115,7 @@
                     h++;
                     if(h==24){
                         h=0;
+                        updateDate();
                     }
                 }
             }
@@ -131,6 +130,12 @@
             $('agency', agency);
             $('callsign', callsign);
             animate=setTimeout(clock,1000);
+        };
+        
+        function updateDate(){
+            day=d.getDate();
+            month=d.getMonth();
+            year=d.getFullYear();
         };
 
         function $(id,val){
