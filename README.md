@@ -50,7 +50,9 @@ DirtRoadDeputy (https://www.twitch.tv/dirtroaddeputy)
 (more to come, I promise.  If you use it, and would like to be mentioned, drop me a message (please no spam). At the very least, your usage will be immortalized here. :) )
 
 # Version History:
-v3: double beep added by user @spaz926 .  Thanks for the addition!
+v3.2: Fix submited by @tyrope . Now when the local clock hits midnight, it will update the date as well.  Thanks for the fix!
+
+v3.1: double beep added by user @spaz926 .  Thanks for the addition!
 
 v2: this one
 
