@@ -96,29 +96,14 @@
 
         function init(){
             d=new Date();
-            h=d.getHours();
-            m=d.getMinutes();
-            s=d.getSeconds();
             t=d.toLocaleString('en', {timeZoneName:'short'}).split(' ').pop();
             clock();
-            updateDate();
-            
         };
 
         function clock(){
-            s++;
-            if(s==60){
-                s=0;
-                m++;
-                if(m==60){
-                    m=0;
-                    h++;
-                    if(h==24){
-                        h=0;
-                        updateDate();
-                    }
-                }
-            }
+            d=new Date();
+            updateTime();
+            updateDate();
             $('sec', s);
             $('min', m);
             $('hr', h);
@@ -129,13 +114,19 @@
             $('player', player);
             $('agency', agency);
             $('callsign', callsign);
-            animate=setTimeout(clock,1000);
+            animate=setTimeout(clock,100);
         };
         
         function updateDate(){
             day=d.getDate();
             month=d.getMonth();
             year=d.getFullYear();
+        };
+        
+        function updateTime(){
+            h=d.getHours();
+            m=d.getMinutes();
+            s=d.getSeconds();
         };
 
         function $(id,val){
