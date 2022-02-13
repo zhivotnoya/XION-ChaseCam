@@ -1,0 +1,42 @@
+body {
+    background-color: rgba(0, 0, 0, 0);
+    margin: 0px auto;
+    overflow: hidden;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 13px;
+    color: #AFAFAF;
+}
+
+.Blink {
+    animation: blinker 1.5s cubic-bezier(.5, 0, 1, 1) infinite alternate;
+}
+
+@keyframes blinker {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+.top-right{
+    float: right;
+    width: auto;
+    text-align: right;
+}
+
+.top-right-container{
+    float: right;
+    width: auto;
+    text-align: right;
+    /* edit the fourth value of the next line to change opacity */
+    /* 0.0 is clear, 1.0 is completely opaque                   */
+    background-color: rgba(0,0,0,0.5);
+    padding: 5px;
+    margin: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius:10px;
+    border-radius:10px;
+}
+
+.container{
+    width: 100wh;
+    height: 100vh;
+}
