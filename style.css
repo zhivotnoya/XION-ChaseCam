@@ -7,8 +7,9 @@ body {
     color: #AFAFAF;
 }
 
-.Blink {
+#blink {
     animation: blinker 1.5s cubic-bezier(.5, 0, 1, 1) infinite alternate;
+    color: #a94442;
 }
 
 @keyframes blinker {
@@ -22,7 +23,7 @@ body {
     text-align: right;
 }
 
-.top-right-container{
+#top-right-container{
     float: right;
     width: auto;
     text-align: right;
@@ -36,7 +37,11 @@ body {
     border-radius:10px;
 }
 
-.container{
-    width: 100wh;
-    height: 100vh;
+.noPadmargin {
+    padding: 0;
+    margin: 0;
+}
+
+#body-info {
+    padding-right: 1em;
 }

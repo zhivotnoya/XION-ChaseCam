@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- External dependancies -->
+        <script src="https://code.jquery.com/jquery.min.js"></script>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono&effect=outline" rel="stylesheet" type="text/css">
+
+        <!-- Own dependancies -->
+        <link rel='stylesheet' type'text/css' href='style.css' />
+        <script src='bodycam.js'></script>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>XION Bodycam Overlay</title>
+    </head>
+
+    <body onLoad="init()">
+        <audio id="beep" autoplay loop>
+            <source src="double-beep.wav" type="audio/wav">
+        </audio>
+        <div id="top-right-container">
+            <div class="top-right">
+                <img id="loco" src="logo.png" />
+            </div>
+            <div class="top-right" id="body-info">
+                REC <span id="blink">&#11044;</span>  XION CHASE-CAM&trade;<br />
+                <span id="player">XXX</span><span id="callsign">[000]</span><br />
+                <span id="agency">XXX</span><br />
+                <span class="noPadMargin" id="dateTime">00 XXX 0000 00:00:00 XXX</span>
+            </div>
+        </div>
+    </body>
+</html>
+
