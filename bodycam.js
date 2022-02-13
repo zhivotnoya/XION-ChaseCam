@@ -2,6 +2,7 @@
 const player = "M. HIGHTOWER";
 const agency = "LOS SANTOS POLICE DEPARTMENT";
 const callsign = "[272]";
+const enableBeepSounds = true; // Change to false to disable the beeps.
 // CONFIG ENDS
 
 const monthNames = ["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"];
@@ -9,6 +10,9 @@ const timezone = Date().toLocaleString('en', {timeZoneName: 'short'}).split(' ')
 
 /** Initialize the bodycam overlay with the static information, and start the clock. */
 function init() {
+    if(enableBeepSounds){
+        injectAudio();
+    }
 
     writeToPage('player', player);
     writeToPage('agency', agency);
@@ -38,6 +42,21 @@ function clock(){
 
     // Call this function again in 100ms.
     setTimeout(clock, 100);
+}
+
+/** Inject the audio player into the HTML page. */
+function injectAudio(){
+    const audio = document.createElement('audio');
+    audio.setAttribute('id', 'beep');
+    audio.setAttribute('autoplay','');
+    audio.setAttribute('loop','');
+
+    const source = document.createElement('source');
+    source.setAttribute('src', 'double-beep.wav');
+    source.setAttribute('type', 'audio/wav');
+
+    audio.appendChild(source);
+    document.body.appendChild(audio);
 }
 
 /** Write a value to the document, padding with extra characters if required.
