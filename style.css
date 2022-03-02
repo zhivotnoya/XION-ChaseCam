@@ -45,3 +45,8 @@ body {
 #body-info {
     padding-right: 1em;
 }
+
+#logo {
+    height: 75px;
+    width: 75px;
+}
