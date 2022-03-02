@@ -3,10 +3,17 @@ const player = "M. HIGHTOWER";
 const agency = "LOS SANTOS POLICE DEPARTMENT";
 const callsign = "[272]";
 const enableBeepSounds = true; // Change to false to disable the beeps.
+
+// TIMEZONE OVERRIDE
+const overrideTimezone = false; // Set to true to enable this feature.
+const hourOffset = 0;
+const minuteOffset = 0;
+const overrideTimezoneName = '';
+
 // CONFIG ENDS
 
 const monthNames = ["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"];
-const timezone = Date().toLocaleString('en', {timeZoneName: 'short'}).split(' ')[5];
+const localTimezoneName = Date().toLocaleString('en', {timeZoneName: 'short'}).split(' ')[5];
 
 /** Initialize the bodycam overlay with the static information, and start the clock. */
 function init() {
@@ -22,26 +29,46 @@ function init() {
 
 /** Write the current time/day to the overlay every 100ms. */
 function clock(){
-    // Get the current time and day.
-    let d = new Date();
-
-    // Merge the date bits together.
-    let datetime = String(d.getDate()).padStart(2, '0');
-    datetime += ' ' + monthNames[d.getMonth()];
-    datetime += ' ' + String(d.getFullYear());
-    // Add the time bits.
-    datetime += ' ' + String(d.getHours()).padStart(2, '0');
-    datetime += ':' + String(d.getMinutes()).padStart(2, '0');
-    datetime += ':' + String(d.getSeconds()).padStart(2, '0');
-
-    // Add the timezone
-    datetime += ' '+timezone;
+    let datetime = getDateTimeString();
 
     // Write these to the document.
     writeToPage('dateTime', datetime);
 
     // Call this function again in 100ms.
     setTimeout(clock, 100);
+}
+
+function getDateTimeString(){
+    // Get the current time and date.
+    let d = new Date();
+
+    // If we plan to override the timezone,
+    // change the time so we can use the UTC values directly.
+    if(overrideTimezone){
+        d.setUTCHours(d.getUTCHours() + hourOffset);
+        d.setUTCMinutes(d.getUTCMinutes() + minuteOffset);
+    }
+
+    // Get the individual bits of information,
+    // based on whether we're overriding or not.
+    let day = overrideTimezone ? d.getUTCDate() : d.getDate();
+    let month = overrideTimezone ? d.getUTCMonth() : d.getMonth();
+    let year = overrideTimezone ? d.getUTCFullYear() : d.getFullYear();
+    let hours = overrideTimezone ? d.getUTCHours() : d.getHours();
+    let minutes = overrideTimezone ? d.getUTCMinutes() : d.getMinutes();
+    let seconds = overrideTimezone ? d.getUTCSeconds() : d.getSeconds();
+    let timezone = overrideTimezone ? overrideTimezoneName : localTimezoneName;
+
+    let datetime = // Date
+        String(day).padStart(2, '0') + ' ' +
+        monthNames[month] + ' ' +
+        String(year) + ' ' +
+        // Time
+        String(hours).padStart(2, '0') + ':' +
+        String(minutes).padStart(2, '0') + ':' +
+        String(seconds).padStart(2, '0') + ' ' +
+        timezone;
+    return datetime;
 }
 
 /** Inject the audio player into the HTML page. */
