@@ -1,0 +1,9 @@
+
+@font-face {
+    font-family: 'vcr_osd_monoregular';
+    src: url('FONT/vcr_osd_mono_1.001-webfont.woff2') format('woff2'),
+         url('FONT/vcr_osd_mono_1.001-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
