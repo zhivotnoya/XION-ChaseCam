@@ -1,160 +1,140 @@
 <!DOCTYPE html>
 <!-- goto line 97 and be sure to edit your information -->
 <html>
-    <head>
-        <script src="https://code.jquery.com/jquery.min.js"></script>
-        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-        <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 
-<!-- CUSTOM FONTS -->
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.3/moment.min.js" crossorigin="anonymous"
+        referrerpolicy="no-referrer"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.34/moment-timezone-with-data-10-year-range.min.js"
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"
+        type="text/css" />
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet"
+        type="text/css" />
 
-        <link rel="stylesheet" href="FONT/stylesheet.css" type="text/css" charset="utf-8" />
-    
-        <style>
-            body { 
-                background-color: rgba(0, 0, 0, 0); 
-                margin: 0px auto; 
-                overflow: hidden; 
-                font-family: 'vcr_osd_monoregular', monospace;
-                font-size: 13px;
-                color: #AFAFAF;
-            }
+    <!-- CUSTOM FONTS -->
 
-            .Blink {
-                animation: blinker 1.5s cubic-bezier(.5, 0, 1, 1) infinite alternate;  
-            }
+    <link rel="stylesheet" href="FONT/stylesheet.css" type="text/css" charset="utf-8" />
 
-            @font-face {
-                font-family: 'vcr_osd_monoregular';
-                src: url(FONT/vcr_osd_mono_1.001-webfont.woff2) format('woff2'),
+    <style>
+        body {
+            background-color: rgba(0, 0, 0, 0);
+            margin: 0px auto;
+            overflow: hidden;
+            font-family: 'vcr_osd_monoregular', monospace;
+            font-size: 13px;
+            color: #AFAFAF;
+        }
+
+        .Blink {
+            animation: blinker 1.5s cubic-bezier(.5, 0, 1, 1) infinite alternate;
+        }
+
+        @font-face {
+            font-family: 'vcr_osd_monoregular';
+            src: url(FONT/vcr_osd_mono_1.001-webfont.woff2) format('woff2'),
                 url(FONT/vcr_osd_mono_1.001-webfont.woff) format('woff');
-                font-weight: normal;
-                font-style: normal;
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @keyframes blinker {
+            from {
+                opacity: 1;
             }
 
-            @keyframes blinker {  
-                from { opacity: 1; }
-                to { opacity: 0; }
+            to {
+                opacity: 0;
             }
+        }
 
-            .top-right{
-                float: right;
-                width: auto;
-                text-align: right;
-            }
-            
-            .top-right-container{
-                float: right;
-                width: auto;
-                text-align: right;
-                /* edit the fourth value of the next line to change opacity */
-                /* 0.0 is clear, 1.0 is completely opaque                   */
-                background-color: rgba(0,0,0,0.8);
-                padding: 5px;
-                margin: 10px;
-                -moz-border-radius: 10px;
-                -webkit-border-radius:10px;
-                border-radius:10px;
-            }
+        .top-right {
+            float: right;
+            width: auto;
+            text-align: right;
+        }
 
-            .container{
-                width: 100wh;
-                height: 100vh;
-            }
-        </style>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width">
-        <title>AXON Bodycam dotRP Overlay</title>
-    </head>
+        .top-right-container {
+            float: right;
+            width: auto;
+            text-align: right;
+            /* edit the fourth value of the next line to change opacity */
+            /* 0.0 is clear, 1.0 is completely opaque                   */
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 5px;
+            margin: 10px;
+            -moz-border-radius: 10px;
+            -webkit-border-radius: 10px;
+            border-radius: 10px;
+        }
 
-    <body>
-<!-- AXON LOGO -->        
-        
-        <div class="top-right-container">
-            <div class="top-right">
-                <img src="IMAGES/AXON-LOGO.png" width="64" height="64" border="0">
-            </div>
-            <div class="top-right">
-                REC&nbsp;<i class="fa fa-circle text-danger Blink"></i>&nbsp;&nbsp;AXON CHASE-CAM&trade;&nbsp;&nbsp;<br />
-                <span id="player">XXX</span>
-                <span id="callsign">[000]</span>&nbsp;&nbsp;<br />
-                <span id="agency">XXX</span>&nbsp;&nbsp;<br />                
-                <span style="padding:0px;margin:0px;" id="day">00</span>
-                <span style="padding:0px;margin:0px;" id="month">XXX</span>
-                <span style="padding:0px;margin:0px;" id="year">0000</span>&nbsp;
-                <span style="padding:0px;margin:0px;" id="hr">00</span>
-                <span style="padding:0px;margin:0px;">:</span>
-                <span style="padding:0px;margin:0px;" id="min">00</span>
-                <span style="padding:0px;margin:0px;">:</span>
-                <span style="padding:0px;margin:0px;" id="sec">00</span>
-                <span style="padding:0px;margin:0px;" id="tz">XX</span>&nbsp;&nbsp;
-            </div>
+        .container {
+            width: 100wh;
+            height: 100vh;
+        }
+    </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>AXON Bodycam dotRP Overlay</title>
+</head>
+
+<body>
+    <!-- AXON LOGO -->
+
+    <div class="top-right-container">
+        <div class="top-right">
+            <img src="IMAGES/AXON-LOGO.png" width="64" height="64" border="0">
         </div>
-    </body>
-    
-    <script>
-        //***edit this only for your information***
-        const player = "EL CHANGO";
-        const agency = "LOS SANTOS POLICE DEPARTMENT";
-        const callsign = "[7M5]";
-        //***        end edit this only         ***
-    
-        var d,h,m,s,animate;
-        const monthNames = ["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"];
+        <div class="top-right">
+            REC&nbsp;<i class="fa fa-circle text-danger Blink"></i>&nbsp;&nbsp;AXON CHASE-CAM&trade;&nbsp;&nbsp;<br />
+            <span id="player"></span>
+            [<span id="callsign"></span>]&nbsp;&nbsp;<br />
+            <span id="agency"></span>&nbsp;&nbsp;<br />
+            <span style="padding:0px;margin:0px;" id="dt"></span>&nbsp;
+            <span style="padding:0px;margin:0px;" id="ts"></span>&nbsp;&nbsp;
+        </div>
+    </div>
+</body>
 
-        function init(){
-            d=new Date();
-            h=d.getHours();
-            m=d.getMinutes();
-            s=d.getSeconds();
-            t=d.toLocaleString('en', {timeZoneName:'short'}).split(' ').pop();
-            clock();
-            updateDate();
-            
-        };
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const player = urlParams.get('player').toUpperCase() || "";
+    const agency = urlParams.get('agency').toUpperCase() || "";
+    const callsign = urlParams.get('callsign').toUpperCase() || "";
+    const tz = urlParams.get('tz') || moment.tz.guess();
 
-        function clock(){
-            s++;
-            if(s==60){
-                s=0;
-                m++;
-                if(m==60){
-                    m=0;
-                    h++;
-                    if(h==24){
-                        h=0;
-                        updateDate();
-                    }
-                }
-            }
-            $('sec', s);
-            $('min', m);
-            $('hr', h);
-            $('tz', t);
-            $('day', day);
-            $('year', year);
-            $('month', monthNames[month]);
-            $('player', player);
-            $('agency', agency);
-            $('callsign', callsign);
-            animate=setTimeout(clock,1000);
-        };
-        
-        function updateDate(){
-            day=d.getDate();
-            month=d.getMonth();
-            year=d.getFullYear();
-        };
+    var animate;
 
-        function $(id,val){
-            if(val<10){
-                val='0'+val;
-            }
-            document.getElementById(id).innerHTML=val;
-        };
+    function init() {
+        $('player', player);
+        $('agency', agency);
+        $('callsign', callsign);
 
-        window.onload=init;
-    </script>
+        clock();
+    };
+
+    function clock() {
+        var d = moment();
+
+        if (tz) {
+            d = d.tz(tz);
+        }
+
+        const dateStr = d.format("DD MMM YYYY").trim();
+        const timeStr = d.format("HH : MM : ss z").trim();
+
+        $('dt', dateStr.toUpperCase());
+        $('ts', timeStr.toUpperCase());
+
+        animate = setTimeout(clock, 1000);
+    };
+
+    function $(id, val) {
+        document.getElementById(id).innerHTML = val;
+    };
+
+    window.onload = init;
+</script>
 
 </html>
