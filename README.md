@@ -47,6 +47,8 @@ SonoranCAD (https://info.sonorancad.com/integration-plugins/twitch-overlay-and-b
 
 DirtRoadDeputy (https://www.twitch.tv/dirtroaddeputy)
 
+SheriffStrafe (https://www.tiktok.com/@sheriffstrafe) <3
+
 (more to come, I promise.  If you use it, and would like to be mentioned, drop me a message (please no spam). At the very least, your usage will be immortalized here. :) )
 
 # Version History:
