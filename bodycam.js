@@ -1,8 +1,11 @@
 // CONFIG START
-const player = "M. HIGHTOWER";
-const agency = "LOS SANTOS POLICE DEPARTMENT";
-const callsign = "[272]";
-const enableBeepSounds = true; // Change to false to disable the beeps.
+const player = "PLACE HOLDER";
+const agency = "EMERGENCY CITY EXAMPLE DEPARTMENT";
+const callsign = "[XXX]";
+
+// SOUND SETTINGS
+const beeperVolume = 0.2; // Set to 0 to disable beeps.
+const beeperRepeatSeconds = 120; // How many seconds between beeps.
 
 // TIMEZONE OVERRIDE
 const overrideTimezone = false; // Set to true to enable this feature.
@@ -17,15 +20,25 @@ const localTimezoneName = Date().toLocaleString('en', {timeZoneName: 'short'}).s
 
 /** Initialize the bodycam overlay with the static information, and start the clock. */
 function init() {
-    if(enableBeepSounds){
-        injectAudio();
-    }
+    beeper = document.getElementById("beep");
+    beeper.volume = beeperVolume;
 
     writeToPage('player', player);
     writeToPage('agency', agency);
     writeToPage('callsign', callsign);
     clock();
+
+    playSound();
+    setInterval(() => {
+        playSound();
+    }, beeperRepeatSeconds * 1000);
 }
+
+/** Beep Beep. */
+function playSound() {
+    beeper.play();
+}
+
 
 /** Write the current time/day to the overlay every 100ms. */
 function clock(){
@@ -69,21 +82,6 @@ function getDateTimeString(){
         String(seconds).padStart(2, '0') + ' ' +
         timezone;
     return datetime;
-}
-
-/** Inject the audio player into the HTML page. */
-function injectAudio(){
-    const audio = document.createElement('audio');
-    audio.setAttribute('id', 'beep');
-    audio.setAttribute('autoplay','');
-    audio.setAttribute('loop','');
-
-    const source = document.createElement('source');
-    source.setAttribute('src', 'double-beep.wav');
-    source.setAttribute('type', 'audio/wav');
-
-    audio.appendChild(source);
-    document.body.appendChild(audio);
 }
 
 /** Write a value to the document, padding with extra characters if required.

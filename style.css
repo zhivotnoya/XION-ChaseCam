@@ -1,10 +1,24 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     background-color: rgba(0, 0, 0, 0);
     margin: 0px auto;
     overflow: hidden;
     font-family: 'Share Tech Mono', monospace;
     font-size: 13px;
+    line-height: 1.42857143;
     color: #AFAFAF;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+}
+
+::before,
+::after {
+    box-sizing: border-box;
 }
 
 #blink {
@@ -35,11 +49,6 @@ body {
     -moz-border-radius: 10px;
     -webkit-border-radius:10px;
     border-radius:10px;
-}
-
-.noPadmargin {
-    padding: 0;
-    margin: 0;
 }
 
 #body-info {
