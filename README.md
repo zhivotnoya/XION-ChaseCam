@@ -28,6 +28,8 @@ These fine folks use it all the time and I thank you from the bottom of my heart
 
 SonoranCAD (https://info.sonorancad.com/integration-plugins/twitch-overlay-and-bot#bodycam-overlay ) offers a modified version that puts in your location information.
 DirtRoadDeputy (https://www.twitch.tv/dirtroaddeputy)
+SheriffStrafe (https://www.tiktok.com/@sheriffstrafe) <3
+
 (more to come, I promise.  If you use it, and would like to be mentioned, drop me a message (please no spam). At the very least, your usage will be immortalized here. :) )
 
 # Version History:
