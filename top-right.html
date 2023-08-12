@@ -75,14 +75,8 @@
                 <span id="player">XXX</span>
                 <span id="callsign">[000]</span>&nbsp;&nbsp;<br />
                 <span id="agency">XXX</span>&nbsp;&nbsp;<br />                
-                <span style="padding:0px;margin:0px;" id="day">00</span>
-                <span style="padding:0px;margin:0px;" id="month">XXX</span>
-                <span style="padding:0px;margin:0px;" id="year">0000</span>&nbsp;
-                <span style="padding:0px;margin:0px;" id="hr">00</span>
-                <span style="padding:0px;margin:0px;">:</span>
-                <span style="padding:0px;margin:0px;" id="min">00</span>
-                <span style="padding:0px;margin:0px;">:</span>
-                <span style="padding:0px;margin:0px;" id="sec">00</span>
+                <span style="padding:0px;margin:0px;" id="date-span">00 XXX 0000</span>
+                <span style="padding:0px;margin:0px;" id="time-span">00:00:00</span>
                 <span style="padding:0px;margin:0px;" id="tz">XX</span>&nbsp;&nbsp;
             </div>
         </div>
@@ -90,9 +84,9 @@
     
     <script>
         //***edit this only for your information***
-        const player = "ALEJANDRO CORRALES";
+        const player = "M. HIGHTOWER";
         const agency = "LOS SANTOS SHERIFF DEPARTMENT";
-        const callsign = "[8730]";
+        const callsign = "[300]";
         //***        end edit this only         ***
     
         var d,h,m,s,animate;
@@ -108,13 +102,6 @@
             d=new Date();
             updateTime();
             updateDate();
-            $('sec', s);
-            $('min', m);
-            $('hr', h);
-            $('tz', t);
-            $('day', day);
-            $('year', year);
-            $('month', monthNames[month]);
             $('player', player);
             $('agency', agency);
             $('callsign', callsign);
@@ -123,14 +110,27 @@
         
         function updateDate(){
             day=d.getDate();
-            month=d.getMonth();
+            month=monthNames[d.getMonth()];
             year=d.getFullYear();
+            var d_str = day + " " + month + " " + year;
+            document.getElementById('date-span').innerHTML = d_str;
         };
         
         function updateTime(){
             h=d.getHours();
             m=d.getMinutes();
             s=d.getSeconds();
+            if (h < 10) {
+                h = "0" + h;
+            }
+            if( m < 10 ) {
+                m = "0" + m;
+            }
+            if( s < 10 ) {
+                s = "0" + s;
+            }
+            var t_str = h + ":" + m + ":" + s + " ";
+            document.getElementById('time-span').innerHTML = t_str;
         };
 
         function $(id,val){
