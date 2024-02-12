@@ -55,6 +55,8 @@ Rob1154 (https://www.twitch.tv/rob1154)
 
 Billesh55 (https://www.twtich.tv/billesh55)
 
+Quasar Dispatch and MDT Script (https://buy.quasar-store.com/package/5695149)
+
 (more to come, I promise.  If you use it, and would like to be mentioned, drop me a message (please no spam). At the very least, your usage will be immortalized here. :) )
 
 # Version History:
