@@ -1,4 +1,4 @@
-[![trophy](https://github-profile-trophy.vercel.app/?username=zhivotnoya&no-bg=true&no-frame=true&theme=matrix)](https://github.com/ryo-ma/github-profile-trophy)
+[![trophy](https://github-profile-trophy.vercel.app/?username=zhivotnoya&no-bg=true&no-frame=true&theme=matrix&row=1&column=5&rank=-SECRET,-SSS,-SS,-S)](https://github.com/ryo-ma/github-profile-trophy)
 
 # XION-ChaseCam
 This is a free-to-use HTML/javascript based overlay for roleplay streamers.  Basically it mimics the overlay of the AXON bodycam, but since most folks play in 3rd person, it's a ChaseCam.  I've included a logo, and the html file.  The html file has the css, html, and javascript all in one file for ease of editing.  Goto line 81 of the html file to change your information, and be sure to read the readme.txt file for further information.
