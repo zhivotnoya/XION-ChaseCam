@@ -84,9 +84,9 @@
     
     <script>
         //***edit this only for your information***
-        const player = "M. HIGHTOWER";
-        const agency = "LOS SANTOS SHERIFF DEPARTMENT";
-        const callsign = "[300]";
+        const player = "M. MAX";
+        const agency = " SHERIFFS DEPARTMENT";
+        const callsign = "[214]";
         //***        end edit this only         ***
     
         const monthNames = ["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"];
@@ -106,17 +106,17 @@
         };
         
         function updateDate(dt){
-            var day=dt.getUTCDate();
-            var month=monthNames[dt.getUTCMonth()];
-            var year=dt.getUTCFullYear();
+            var day=dt.getEDTDate();
+            var month=monthNames[dt.getEDTMonth()];
+            var year=dt.getEDTFullYear();
             var d_str = day + " " + month + " " + year;
             document.getElementById('date-span').innerHTML = d_str;
         };
         
         function updateTime(dt){
-            var h=dt.getUTCHours().toString();
-            var m=dt.getUTCMinutes().toString();
-            var s=dt.getUTCSeconds().toString();
+            var h=dt.getEDTHours().toString();
+            var m=dt.getEDTMinutes().toString();
+            var s=dt.getEDTSeconds().toString();
             h = h.length == 1 ? '0' + h : h;
             m = m.length == 1 ? '0' + m : m;
             s = s.length == 1 ? '0' + s : s;
