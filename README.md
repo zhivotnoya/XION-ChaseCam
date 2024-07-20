@@ -55,7 +55,7 @@ GarrettGaming19 (https://kick.com/garrettgaming19)
 
 Rob1154 (https://www.twitch.tv/rob1154)
 
-Billesh55 (https://www.twtich.tv/billesh55)
+Billesh55 (https://www.twitch.tv/billesh55)
 
 Quasar Dispatch and MDT Script (https://buy.quasar-store.com/package/5695149)
 
