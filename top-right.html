@@ -106,17 +106,17 @@
         };
         
         function updateDate(dt){
-            var day=dt.getEDTDate();
-            var month=monthNames[dt.getEDTMonth()];
-            var year=dt.getEDTFullYear();
+            var day=dt.getUTCDate();
+            var month=monthNames[dt.getUTCMonth()];
+            var year=dt.getUTCFullYear();
             var d_str = day + " " + month + " " + year;
             document.getElementById('date-span').innerHTML = d_str;
         };
         
         function updateTime(dt){
-            var h=dt.getEDTHours().toString();
-            var m=dt.getEDTMinutes().toString();
-            var s=dt.getEDTSeconds().toString();
+            var h=dt.getUTCHours().toString();
+            var m=dt.getUTCMinutes().toString();
+            var s=dt.getUTCSeconds().toString();
             h = h.length == 1 ? '0' + h : h;
             m = m.length == 1 ? '0' + m : m;
             s = s.length == 1 ? '0' + s : s;
