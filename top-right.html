@@ -95,8 +95,20 @@
             clock();
         };
 
+        function getLocalTime() {
+            const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+            const localTimeStr = new Date().toLocaleString("en-US", { timeZone: userTimezone });
+            const localDate = new Date(localTimeStr);
+            return {
+                hours: localDate.getHours(),
+                minutes: localDate.getMinutes(),
+                seconds: localDate.getSeconds(),
+                fullDate: localDate
+            };
+        }
+
         function clock(){
-            var d=new Date();
+            var d=getLocalTime();
             updateTime(d);
             updateDate(d);
             $('player', player);
@@ -106,17 +118,14 @@
         };
         
         function updateDate(dt){
-            var day=dt.getEDTDate();
-            var month=monthNames[dt.getEDTMonth()];
-            var year=dt.getEDTFullYear();
-            var d_str = day + " " + month + " " + year;
+            var d_str = dt.fullDate;
             document.getElementById('date-span').innerHTML = d_str;
         };
         
         function updateTime(dt){
-            var h=dt.getEDTHours().toString();
-            var m=dt.getEDTMinutes().toString();
-            var s=dt.getEDTSeconds().toString();
+            var h=dt.hours;
+            var m=dt.minutes;
+            var s=dt.seconds;
             h = h.length == 1 ? '0' + h : h;
             m = m.length == 1 ? '0' + m : m;
             s = s.length == 1 ? '0' + s : s;
