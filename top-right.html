@@ -62,8 +62,8 @@
     </head>
 
     <body>
-    	<audio id="beep" autoplay loop>
-    		<source src="double-beep.wav" type="audio/wav">
+        <audio id="beep" autoplay loop>
+            <source src="double-beep.wav" type="audio/wav">
         </audio>
         
         <div class="top-right-container">
@@ -122,7 +122,7 @@
             const month = monthNames[dateObj.getMonth()];
             const year = dateObj.getFullYear();
             var d_str = dt.fullDate;
-            document.getElementById('date-span').innerHTML = '#{day}-${month}-${year}';
+            document.getElementById('date-span').innerHTML = day + '-' + month + '-' + year;
         };
         
         function updateTime(dt){
