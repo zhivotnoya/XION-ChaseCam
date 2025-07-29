@@ -126,12 +126,9 @@
         };
         
         function updateTime(dt){
-            var h=dt.hours;
-            var m=dt.minutes;
-            var s=dt.seconds;
-            h = h.length == 1 ? '0' + h : h;
-            m = m.length == 1 ? '0' + m : m;
-            s = s.length == 1 ? '0' + s : s;
+            const h = ("0" + dt.hours).slice(-2);
+            const m = ("0" + dt.minutes).slice(-2);
+            const s = ("0" + dt.seconds).slice(-2);
             var t_str = h + ":" + m + ":" + s + " ";
             document.getElementById('time-span').innerHTML = t_str;
         };
