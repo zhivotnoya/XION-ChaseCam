@@ -76,8 +76,7 @@
                 <span id="callsign">[000]</span>&nbsp;&nbsp;<br />
                 <span id="agency">XXX</span>&nbsp;&nbsp;<br />                
                 <span style="padding:0px;margin:0px;" id="date-span">00 XXX 0000</span>
-                <span style="padding:0px;margin:0px;" id="time-span">00:00:00</span>
-                <span style="padding:0px;margin:0px;" id="tz">UTC</span>&nbsp;&nbsp;
+                <span style="padding:0px;margin:0px;" id="time-span">00:00:00</span>&nbsp;&nbsp;
             </div>
         </div>
     </body>
@@ -118,8 +117,12 @@
         };
         
         function updateDate(dt){
+            const dateObj = dt.fullDate;
+            const day = ("0" + dateObj.getDate()).slice(-2);
+            const month = monthNames[dateObj.getMonth()];
+            const year = dateObj.getFullYear();
             var d_str = dt.fullDate;
-            document.getElementById('date-span').innerHTML = d_str;
+            document.getElementById('date-span').innerHTML = '#{day}-${month}-${year}';
         };
         
         function updateTime(dt){
